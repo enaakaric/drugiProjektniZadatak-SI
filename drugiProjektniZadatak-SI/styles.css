@@ -1,0 +1,58 @@
+body {
+    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* da bi se podijelilo u tri kolone */
+    grid-gap: 10px;
+    width: 100%; /* sirina cijelog ekr */
+    max-width: 600px; /* max za igru*/
+    margin: 0 auto; /* centrirano */
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    padding-top: 100%; 
+    background-color: #ececec;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card img {
+    position: absolute;
+    top: 0;     
+    left: 0;     
+    width: 100%;   
+    height: 100%;  
+    object-fit: cover; 
+    display: none; 
+}
+
+
+.card.flipped {
+    background-color: #ffffff;
+}
+
+.card.flipped img {
+    display: block;
+}
+
+.card.matched {
+    background-color: #4caf50;
+    pointer-events: none;
+}
+
+button {
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
